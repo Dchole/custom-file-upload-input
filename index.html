@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom upload file button</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <section>
+      <div></div>
+      <label aria-label="upload file">
+        <input id="upload" type="file" />
+      </label>
+    </section>
+
+    <script>
+      const IMG_DISPLAY = document.querySelector("div");
+      const INPUT = document.querySelector("input");
+
+      let file;
+      let imgPlaceholder;
+
+      const handleUpload = event => {
+        file = event.target.files[0];
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onloadend = () => {
+          imgPlaceholder = reader.result;
+
+          IMG_DISPLAY.style.background = `url(${imgPlaceholder}) center center/cover`;
+        };
+      };
+
+      INPUT.addEventListener("change", handleUpload);
+    </script>
+  </body>
+</html>
