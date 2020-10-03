@@ -9,29 +9,30 @@
 
   <body>
     <section>
-      <div></div>
-      <label aria-label="upload file">
-        <input id="upload" type="file" />
-      </label>
+      <div id="img-placeholder" role="img" tabindex="-1"></div>
+
+      <div id="upload-btn-container">
+        <input id="upload" type="file" aria-label="upload file" />
+        <span tabindex="-1">👾</span>
+      </div>
     </section>
 
     <script>
       const IMG_DISPLAY = document.querySelector("div");
       const INPUT = document.querySelector("input");
 
-      let file;
-      let imgPlaceholder;
-
       const handleUpload = event => {
-        file = event.target.files[0];
+        const file = event.target.files[0];
 
         const reader = new FileReader();
         reader.readAsDataURL(file);
 
         reader.onloadend = () => {
-          imgPlaceholder = reader.result;
+          const imgPlaceholder = reader.result;
 
           IMG_DISPLAY.style.background = `url(${imgPlaceholder}) center center/cover`;
+          IMG_DISPLAY.setAttribute("aria-label", "John Doe's Profile");
+          IMG_DISPLAY.focus();
         };
       };
 
