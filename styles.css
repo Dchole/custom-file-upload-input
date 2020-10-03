@@ -42,7 +42,7 @@ input:hover {
 }
 
 input::-webkit-file-upload-button {
-  display: none;
+  transform: translateY(-120%);
 }
 
 input::before {
