@@ -9,34 +9,7 @@
 
   <body>
     <section>
-      <div id="img-placeholder" role="img" tabindex="-1"></div>
-
-      <div id="upload-btn-container">
-        <input id="upload" type="file" aria-label="upload file" />
-        <span tabindex="-1">👾</span>
-      </div>
+      <input id="upload" type="file" accept="image/*" />
     </section>
-
-    <script>
-      const IMG_DISPLAY = document.querySelector("div");
-      const INPUT = document.querySelector("input");
-
-      const handleUpload = event => {
-        const file = event.target.files[0];
-
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-
-        reader.onloadend = () => {
-          const imgPlaceholder = reader.result;
-
-          IMG_DISPLAY.style.background = `url(${imgPlaceholder}) center center/cover`;
-          IMG_DISPLAY.setAttribute("aria-label", "John Doe's Profile");
-          IMG_DISPLAY.focus();
-        };
-      };
-
-      INPUT.addEventListener("change", handleUpload);
-    </script>
   </body>
 </html>
