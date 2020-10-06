@@ -37,4 +37,4 @@ Yayyy!!! 🎉🎉🎉 Now we have our completely customized upload button.
 
 %[https://codepen.io/gameshaker/pen/rNLBxZQ]
 
-Check out the [full code on codepen.io](https://codepen.io/gameshaker/pen/rNLBxZQ). or clone the [git repo]()
+Check out the [full code on codepen.io](https://codepen.io/gameshaker/pen/rNLBxZQ). or clone the [git repo](https://github.com/Dchole/custom-file-upload-input.git)
